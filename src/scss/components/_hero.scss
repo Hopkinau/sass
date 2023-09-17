@@ -1,0 +1,10 @@
+@use '../abstracts/' as *;
+
+.hero-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: $primaryColor;
+  border-radius: 5px;
+  padding: 40px;
+  text-align: center;
+}

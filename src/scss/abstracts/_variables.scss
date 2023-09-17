@@ -1,0 +1,29 @@
+// TYPOGRAPHY
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap');
+$primaryFont: 'Rubik', Arial, Helvetica, sans-serif; 
+
+// COLORS (https://tailwindcss.com/docs/customizing-colors)
+$primaryColor: #FFFFFF;
+$complementaryColor: #111827;
+$brandColor: #60a5fa;
+$brandSkewColor: #818cf8;
+$highlightColor: #9ca3af;
+$succesColor: #16a34a;
+$errorColor: #dc2626;
+
+// BS-COLORS
+$white: #FFFFFF;
+$dark: $brandColor;
+$danger: $errorColor;
+
+// BS-UTILITIES: Spacer
+$spacer: 2rem;
+// BS-UTILITIES: Media Query Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 1200px,
+  md: 1250px,
+  lg: 1300px,
+  xl: 1350px,
+  xxl: 1400px
+);

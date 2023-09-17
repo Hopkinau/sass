@@ -1,0 +1,14 @@
+@use '../abstracts/' as *;
+
+.navbar {
+  background: $complementaryColor;
+  color: $primaryColor;
+
+  .navbar-brand, .nav-link {  
+    color: $primaryColor;
+
+    &:hover {  
+      color: $brandColor;
+    }
+  }
+}

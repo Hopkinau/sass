@@ -1,0 +1,75 @@
+[5.1] SASS INTEGRATION
+
+PURPOSE OF 04 FILE: SASS + REACT + BOOTSTRAP FILE ARCHITECTURE
+  - Linking SASS File Architecture with React & Bootstrap (7-1 Rule with "vendor" directory)
+  - Noting wider styling considerations
+
+PREVIOUS CHALLENGE 1 & 2: Refine React project in SCSS & overwrite default Bootstrap SCSS variables!
+
+
+STEPS TO INTEGRATE:
+  (0) CLI DART-SASS 
+    - Make sure you have this installed & script configured: "npm i sass" 
+  
+  (1a) EXTRACT VARIABLES TO ABSTRACTS 
+    - Setup our standard abstracts folder, with _index.scss & _variables.scss 
+    - Include all our Bootstrap overrides in _variables.scss & export
+
+  (1b) NEW VENDOR DIRECTORY (https://sass-guidelin.es/#architecture)
+    - Create new vendor folder 
+    - Create new file inside called _bootstrap.scss 
+    - @use the default abstracts first, as they take PRIORITY ("default override")
+    - Copy in the bootstrap import into the scss file AND CHECK THE RELATIVE FILE PATH (node modules is NOW nested in another folder!)
+  
+  (1c) LINKING IT ALL TOGETHER 
+    - Link the vendors file(s) to main.scss using the @use 
+      -> NOTE: We must still @use the vendor imports FIRST above any other partial module in main.scss!
+
+    - @use the abstracts files above the Bootstrap import, in _bootstrap.scss 
+      -> This way = We STILL call the variables FIRST which OVERRIDES Bootstrap!
+
+    - Test that it has linked correctly, by changing the linked variable colors 
+ 
+  (2) WIDER STYLING CONSIDERATIONS 
+
+    (a) MODULAR CSS: We have created a React file architecture that allows for "component-based CSS" (https://create-react-app.dev/docs/adding-a-stylesheet) [we will use in Next.js next term]
+      -> The Create React App toolchain includes this concept by default through the inclusion of App.css 
+      -> You can extend this to have a .css file for any one component, and keep it inside the component folder 
+      -> Technically, you could also bring in partial .scss modules to achieve a similar function, but just note that they would likely still need to link BACK TO THE main.scss RATHER than the component (convenience) 
+
+    (b) OTHER RESPONSIVE FRAMEWORKS
+      -> Many other responsive frameworks like Materialise come with SASS support 
+      -> Popular utility-based framework = TailwindCSS
+          - We will not go into depth into TailwindCSS as it has a learning curve 
+          - Integration with SASS is possible, but the usefulness of this is MIXED (https://tailwindcss.com/docs/using-with-preprocessors)
+          - Integration with SASS, needs prior knowledge of Post-CSS preprocessor as it acts like a middleman (SEE MORE: https://www.elian.codes/blog/writing-your-own-components-with-tailwind-sass/)
+
+      -> To incorporate Tailwind + SASS, would require a bit of extra reading, so do NOT attempt it unless you have plenty of spare time!
+
+    (c) LAST WORD: Styling is up for interpretation
+      - CSS is a throrough BUT pure rule-based language 
+      - MANY systems have now been designed to enhance its functionality or convenience 
+        -> Try to find a system that works for you + is relatively popular
+        -> GOOD SYSTEMS: 
+            - SASS is EASILY the most popular preprocessor, followed by Post-CSS (used with Tailwind)
+            - TailwindCSS is the most popular CSS Framework, but Bootstrap is the most adopted 
+            - Styled Components is the most used and ALMOST most popular CSS-in-JS integration tool (with "Vanilla-Extract" worth monitoring)
+
+            - KEEP UP TO DATE: https://2021.stateofcss.com/en-US/technologies
+
+
+  + CHALLENGE 3: Refine React project in SCSS & overwrite default Bootstrap SCSS variables!
+
+
+  + CHALLENGE 4: REFINE REACT PROJECT TO CREATING PROPER 7-1 RULE SCSS ARCHITECTURE
+    - Refine the base CSS we had into proper SCSS (variables, nesting, modules, mixins)
+    - Experiment with adding the following overriden Bootstrap components:
+
+      (i) Producing a card grid on the HOME PAGE, with the card background color being: #40bf7f
+
+      (ii) Produce a "warning" alert, on the NOT FOUND PAGE, with the background color set to: #FFC0CB
+
+      (iii) Produce a primary spinner, on the NOT FOUND PAGE, with the text color set to: #FF1493
+
+
+    - NOTE: This is designed to test your ability to READ DOCUMENTATION (react-bootstrap & bootstrap), as well as reinforce your new abilities with overriding Bootstrap!
